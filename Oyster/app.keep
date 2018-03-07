@@ -1,0 +1,87 @@
+let n= 0;
+console.log("Test");
+
+
+const fs = require('fs');
+
+let warandpeace;
+let length;
+console.log("Reading: "+process.env.MESOS_SANDBOX+"/warandpeace.txt");
+fs.readFile(process.env.MESOS_SANDBOX+"/warandpeace.txt", 'utf8', function(err, data) {
+  if (err) throw err;
+  warandpeace= new String(data);
+  length= warandpeace.length;
+});
+
+console.log(process.env.MESOS_SANDBOX+"/airports.txt");
+fs.readFile(process.env.MESOS_SANDBOX+"/airports.txt", 'utf8', function(err, data) {
+  if (err) throw err;
+  airports= new String(data).split("\n");
+  console.log(airports[0]);
+  console.log(airports[1]);
+  
+  console.log(airports[6976]);
+  console.log(airports[6977]);
+  
+});
+
+function getRandomInt() {
+  return Math.floor(Math.random() * 101);
+};
+
+function getRandomLong() {
+  return Math.floor(Math.random() * 10001);
+};
+
+function getRandomFloat() {
+  return (Math.random() * 1000001);
+};
+
+function getRandomBoolean() {
+  if(Math.random()> 0.5)
+    return true;
+  return false;
+};
+
+function getRandomString() {
+  let start= Math.floor(Math.random() * (length- 128* Math.random()));
+  let words= Math.floor((Math.random() * 10) + 1);
+
+  while(warandpeace.charAt(start)!= ' ' && warandpeace.charAt(start)!= ".") {
+    start++;
+  }
+  start++;
+  let end= start+1;
+  for(var i= 0; i< words; i++) {
+    while(warandpeace.charAt(end)!= ' ' && warandpeace.charAt(start)!= ".") {
+      end++;
+    }
+    end++;
+  }
+  let ret= warandpeace.substring(start, end);
+  ret= ret.replace(/\n/g, '');
+  ret= ret.replace(/,/g, ' ');
+  ret= ret.replace(/:/g, ' ');
+  ret= ret.replace(/"/g, ' ');
+  ret= ret.replace(/'/g, ' ');
+  ret= ret.replace(/!/g, ' ');
+  ret= ret.replace(/\(/g, ' ');
+  ret= ret.replace(/\)/g, ' ');
+  ret= ret.replace(/\?/g, ' ');
+  ret= ret.replace(/\./g, ' ');
+  
+  console.log("Random string: "+ ret);  
+
+}
+
+setTimeout(load, 100);
+
+function load() {
+  getRandomString();
+setTimeout(load, 100);
+  
+}
+
+
+
+
