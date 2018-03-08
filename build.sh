@@ -8,9 +8,9 @@ export BASEIMAGE=node694
 export APP_DIR=/opt/app
 
 
-cd Oyster
-docker build -t $DOCKERHUB_USER/$DOCKERHUB_REPO:dcosappstudio-smartcity-oysterload-v$VERSION .
-docker push $DOCKERHUB_USER/$DOCKERHUB_REPO:dcosappstudio-smartcity-oysterload-v$VERSION 
+cd LoadGenerator
+docker build -t $DOCKERHUB_USER/$DOCKERHUB_REPO:dcosappstudio-smartcity-loadgenerator-v$VERSION .
+docker push $DOCKERHUB_USER/$DOCKERHUB_REPO:dcosappstudio-smartcity-loadgenerator-v$VERSION 
 cd ..
 
 cd UI

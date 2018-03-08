@@ -10,3 +10,4 @@ dcos package install --yes zeppelin --package-version=0.6.0
 dcos marathon app remove /prod/microservices/smartcity/ui/ui
 
 dcos marathon app add ui.tmp
+dcos marathon app add smartcity-loadgenerator.json 

@@ -9,3 +9,5 @@ sed -ie "s@CLUSTER_URL_TOKEN@$CLUSTER_URL@g;" ui.tmp
 sed -ie "s@https://@http://@g;" ui.tmp
 
 kubectl replace -f ui.tmp --force
+
+dcos marathon app add smartcity-loadgenerator.json 

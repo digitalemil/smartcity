@@ -33,7 +33,15 @@ spec:
           value: /opt/app
         - name: DASHBOARDURL
           value: 
-        ports:
+        - name: DASHBOARDURL1
+          value: 
+        - name: DASHBOARDURL2
+          value: 
+        - name: DASHBOARDURL3
+          value: 
+        - name: DASHBOARDURL4
+          value: 
+      ports:
         - containerPort: 3000
         - containerPort: 10500
 ---

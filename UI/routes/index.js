@@ -246,28 +246,28 @@ router.get('/dashboard.html', function(req, res, next) {
   res.render('dashboard', { table: appdef.table, keyspace: appdef.keyspace, dashboardurl: dashboardurl});
 });
 
-router.get('/streetlights.html', function(req, res, next) {
+router.get('/parkingmeter.html', function(req, res, next) {
   let pn= process.env.PUBLICNODE+":10339";
-  let dashboardurl= 'http://'+pn+process.env.DASHBOARDURL;
-  res.render('streetlights', { table: appdef.table, keyspace: appdef.keyspace, dashboardurl: dashboardurl});
-});
-
-router.get('/solarpanels.html', function(req, res, next) {
-  let pn= process.env.PUBLICNODE+":10339";
-  let dashboardurl= 'http://'+pn+process.env.DASHBOARDURL;
-  res.render('solarpanels', { table: appdef.table, keyspace: appdef.keyspace, dashboardurl: dashboardurl});
+  let dashboardurl= 'http://'+pn+process.env.DASHBOARDURL1;
+  res.render('parkingmeter', { table: appdef.table, keyspace: appdef.keyspace, dashboardurl: dashboardurl});
 });
 
 router.get('/trafficlights.html', function(req, res, next) {
   let pn= process.env.PUBLICNODE+":10339";
-  let dashboardurl= 'http://'+pn+process.env.DASHBOARDURL;
+  let dashboardurl= 'http://'+pn+process.env.DASHBOARDURL2;
   res.render('trafficlights', { table: appdef.table, keyspace: appdef.keyspace, dashboardurl: dashboardurl});
 });
 
 router.get('/oystercard.html', function(req, res, next) {
   let pn= process.env.PUBLICNODE+":10339";
-  let dashboardurl= 'http://'+pn+process.env.DASHBOARDURL;
+  let dashboardurl= 'http://'+pn+process.env.DASHBOARDURL3;
   res.render('oystercard', { table: appdef.table, keyspace: appdef.keyspace, dashboardurl: dashboardurl});
+});
+
+router.get('/solarpanels.html', function(req, res, next) {
+  let pn= process.env.PUBLICNODE+":10339";
+  let dashboardurl= 'http://'+pn+process.env.DASHBOARDURL4;
+  res.render('solarpanels', { table: appdef.table, keyspace: appdef.keyspace, dashboardurl: dashboardurl});
 });
 
 router.get('/zeppelinframe.html', function(req, res, next) {
