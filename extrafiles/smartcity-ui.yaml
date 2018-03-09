@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: ui
-        image: mesosphere/dcosappstudio:dcosappstudio-smartcity-ui-v1.11.rc4-1.4.0-0.0.1
+        image: mesosphere/dcosappstudio:dcosappstudio-smartcity-ui-v1.11.rc4-1.4.1-0.0.1
         imagePullPolicy: Always
         env:
         - name: APPDEF
@@ -40,7 +40,7 @@ spec:
         - name: DASHBOARDURL3
           value: 
         - name: DASHBOARDURL4
-          value: 
+          value: /app/kibana#/dashboard/d1?embed=true?_g=(refreshInterval:(display:'10+seconds',pause:!f,section:1,value:10000),time:(from:now-60m,mode:quick,to:now))&_a=(description:'',filters:!(),options:(darkTheme:!f),panels:!((col:1,id:'v2',panelIndex:1,row:1,size_x:10,size_y:5,type:visualization),(col:6,id:v3,panelIndex:2,row:6,size_x:5,size_y:3,type:visualization),(col:1,id:'v1',panelIndex:3,row:6,size_x:5,size_y:3,type:visualization)),query:(query_string:(analyze_wildcard:!t,query:'type:3')),timeRestore:!f,title:'Solar%20Panels',uiState:(P-1:(mapCenter:!(51.57706953722565,-0.20256042480468747),spy:(mode:(fill:!f,name:!n))),P-3:(vis:(defaultColors:('0%20-%2050':'rgb(247,252,245)','50%20-%2075':'rgb(116,196,118)','75%20-%20100':'rgb(0,68,27)')))),viewMode:view)
       ports:
         - containerPort: 3000
         - containerPort: 10500

@@ -109,7 +109,7 @@ function solarPanelData() {
       obj.event_timestamp= getDateTime(obj.id);
       let max= Math.floor(1+Math.random()*4)*100;
       obj.intvalue1= Math.floor(Math.random()* max);
-      obj.value= obj.intvalue1+"";
+      obj.value= Math.floor((1.00001*obj.intvalue1)/max*100.0);
       obj.intvalue2= max;
       obj.location= locations[key]
       posts++;
