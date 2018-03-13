@@ -10,7 +10,7 @@ sed -ie "s@https://@http://@g;" ui.tmp
 
 kubectl replace -f ui.tmp --force
 
-cp smartcity-loadgenerator.json  smartcity-loadgenerator.tmp
+cp smartcity-loadgenerator-k8s.json  smartcity-loadgenerator.tmp
 sed -ie "s@\$PUBLICNODE@$1@g;"  smartcity-loadgenerator.tmp
 dcos marathon app add smartcity-loadgenerator.tmp
 
