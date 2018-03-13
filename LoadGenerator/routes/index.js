@@ -42,7 +42,11 @@ function parkingMeterData() {
       obj.id= id++;
       obj.type= 5;
       obj.message1= key.toString();
-      let v= Math.floor(Math.random()*2);
+      let v= Math.random();
+      if(v< 0.85)
+        v= 1;
+      else
+        v= 0;
     
       obj.message2= v==0?"Free":"Occupied" 
       obj.value= v;
@@ -74,8 +78,15 @@ function trafficLightsData() {
       obj.id= id++;
       obj.type= 4;
       obj.message1= key.toString();
-      let v= Math.floor(Math.random()*3);
-    
+      let v= Math.random();
+      if(v< 0.8)
+        v= 0;
+      else {
+        if(v<0.9)
+          v= 2;
+        else
+          v= 1;
+        } 
       obj.message2= v==0?"Red":(v==1?"Yellow":"Green") 
       obj.value= v;
       obj.status= getRandomStatus();
